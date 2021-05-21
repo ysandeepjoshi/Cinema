@@ -1,9 +1,13 @@
-import './App.css';
+import React from 'react';
+import Search from './components/Search'
 
 function App() {
   return (
     <div className="App">
-      Movie DB
+      <header><h1>Movie DB App</h1></header>
+      <main>
+        <Search />
+      </main>
     </div>
   );
 }
