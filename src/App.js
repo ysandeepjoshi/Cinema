@@ -1,14 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect } from 'react'
 
 import Search from './components/Search'
 import Results from './components/Results'
-
+import dummyData from './data/movies.json'
 function App() {
   const [state, setState] = useState({
     s: "",
     results: [],
     selected: {}
   });
+
+  useEffect(() => {
+      setState(prevState => {
+        return {...prevState, results : dummyData.movies}
+      })
+  }, []);
 
   const search = (e) => {
     if (e.key === "Enter") {
@@ -18,7 +24,7 @@ function App() {
   
   const handleInput = (e) => {
     let s = e.target.value;
-
+    
     setState(prevState => {
       return { ...prevState, s: s }
     });
