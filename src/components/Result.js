@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Result({ result }) {
+function Result({ result, openPopup }) {
 	return (
-		<div className="result">
-			<img src={result.Poster} alt="could not load poster"/>
+		<div className="result" onClick={() => openPopup(result.imdbID)}>
+			<img src={result.Poster} alt="Poster mising"/>
 			<h3>{result.Title}</h3>
 		</div>
 	)
