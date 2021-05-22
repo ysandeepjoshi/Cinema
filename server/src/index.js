@@ -21,10 +21,6 @@ connection.once('open',()=>{
 const movieRouter = require('./routes/movies');
 app.use('/movies',movieRouter);
 
-
-
-
-
 app.listen(port,()=>{
     console.log(`Server is running on port: ${port}`);
 })

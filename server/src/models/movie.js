@@ -15,35 +15,23 @@ const movieSchema = new Schema({
   imdbID:{
     type: String,
     required: true,
-    trim: true,
-    lowercase: true,
   },
   listingType:{ type : String,
-    required: true,
-    trim: true,
-    lowercase: true,},
+    required: true,},
   imdbRating: {type : String,
-    required: true,
-    trim: true,
-    lowercase: true,},
+    required: true,},
   Stills: [{type : String }],
   Language: {
     type: String,
     required: true,
-    trim: true,
-    lowercase: true,
   },
   Location: {
     type: String,
     required: true,
-    trim: true,
-    lowercase: true,
   },
   Plot: {
     type: String,
     required: true,
-    trim: true,
-    lowercase: true,
   },
 });
 

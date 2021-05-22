@@ -5,6 +5,8 @@ const router = new express.Router();
 
 // Create a movie
 router.route('/add').post(async (req, res) => {
+  console.log(req.body);
+    
   const movie = new Movie(req.body);
   try {
     await movie.save();
@@ -43,16 +45,7 @@ router.route('update/:id').put( async (req, res) => {
   const _id = req.params.id;
   const updates = Object.keys(req.body);
   const allowedUpdates = [
-    'title',
-    'image',
-    'language',
-    'genre',
-    'director',
-    'cast',
-    'description',
-    'duration',
-    'releaseDate',
-    'endDate',
+    'Title'
   ];
   const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
 
