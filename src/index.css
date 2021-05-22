@@ -72,6 +72,12 @@ section {
 	display: block;
 	width: 100%;
 }
+.stills{
+	width: 200px;
+	height: 200px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
 
 .results .result h3 {
 	color: #FFF;
@@ -134,7 +140,7 @@ section {
 	padding: 0px 15px;
 }
 
-.popup .content .plot p {
+.popup .content .plot p,.location {
 	flex: 1 1 50%;
 	padding: 15px;
 }

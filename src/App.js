@@ -17,6 +17,8 @@ function App() {
     results: [],
     selected: {}
   });
+  
+  const [sortState, setSortState] = useState(true);
 
   useEffect(() => {
       setState(prevState => {
@@ -27,7 +29,7 @@ function App() {
   const search = (e) => {
     if (e.key === "Enter") {
       //write axios code here to fetch data from backend.
-      let results = dummyData.movies.filter((item)=> item.imdbID.includes(state.s));
+      let results = dummyData.movies.filter((item)=> item.Title.toLowerCase().includes(state.s));
       setState(prevState => {
         return { ...prevState, results: results }
       })
@@ -45,8 +47,6 @@ function App() {
   const openPopup = id => {
       let result = dummyData.movies.filter((item)=> item.imdbID ===id);
 
-      console.log(result);
-
       setState(prevState => {
         return { ...prevState, selected: result[0] }
       });
@@ -57,8 +57,6 @@ function App() {
       return { ...prevState, selected: {} }
     });
   }
-
-
 
 
   return (
